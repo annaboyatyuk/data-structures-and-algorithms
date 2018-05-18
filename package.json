@@ -1,0 +1,26 @@
+{
+  "name": "array_reverse",
+  "version": "1.0.0",
+  "description": "<!-- Short summary or background information --> I don't know what this is asking ![Getting Started](../assets/question.jpg)",
+  "main": "array_reverse.js",
+  "scripts": {
+    "test": "jest --verbose --coverage",
+    "lint": "eslint **/*.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^4.19.1",
+    "jest": "^22.4.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annaboyatyuk/data-structures-and-algorithms.git"
+  },
+  "bugs": {
+    "url": "https://github.com/annaboyatyuk/data-structures-and-algorithms/issues"
+  },
+  "homepage": "https://github.com/annaboyatyuk/data-structures-and-algorithms#readme"
+}
