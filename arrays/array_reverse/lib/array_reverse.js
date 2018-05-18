@@ -1,5 +1,6 @@
 'use strict';
 
+
 function reverseArray(inputArr) {
   let outputArr = [];
 
@@ -9,6 +10,6 @@ function reverseArray(inputArr) {
   return outputArr;
 }
 
-let a = [1, 2, 3, 4, 5, 6];
-let b = reverseArray(a);
-console.log(b);
+module.exports = reverseArray;
+
+
