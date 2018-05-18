@@ -4,7 +4,8 @@
   "description": "<!-- Short summary or background information --> I don't know what this is asking ![Getting Started](../assets/question.jpg)",
   "main": "array_reverse.js",
   "scripts": {
-    "test": "jest --verbose --coverage"
+    "test": "jest --verbose --coverage",
+    "lint": "eslint **/*.js"
   },
   "keywords": [],
   "author": "",
