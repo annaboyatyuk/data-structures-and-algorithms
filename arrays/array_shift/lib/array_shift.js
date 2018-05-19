@@ -5,7 +5,7 @@ module.exports = exports = {};
 exports.insertShiftArray = (arr, num) => {
 
   let newArr = [];
-  let middle = arr.length/2;
+  let middle = Math.ceil(arr.length/2);
 
   for(let i = 0; i < arr.length +1; i ++) {
     if(i < middle) {
