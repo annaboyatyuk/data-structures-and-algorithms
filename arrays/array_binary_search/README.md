@@ -1,3 +1,5 @@
+https://travis-ci.com/annaboyatyuk/data-structures-and-algorithms.svg?branch=master
+
 # Binary Search
 Write a function called Binary search which takes in an array and a number. Find in the array the number that matches that search key number and return the index of it. If the number does not exist in the array, return -1.
 
