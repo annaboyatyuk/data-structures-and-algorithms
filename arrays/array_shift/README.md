@@ -6,4 +6,4 @@ basically creating the splice() array method without using any built in methods.
 
 ## Solution
 
-![Getting Started](../assets/array_shift.jpg)
+![Getting Started](../../assets/array_shift.jpg)
