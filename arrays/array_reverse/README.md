@@ -9,6 +9,6 @@ I don't know what this is asking
 
 ## Solution
 
-![Getting Started](../assets/array_reverse.jpg)
+![Getting Started](../../assets/array_reverse.jpg)
 
 
