@@ -13,7 +13,7 @@ describe('', () => {
   });
 
   it('insertShiftArray() will take an array input and a number input and return an array with the number at the middle index of the array', () => {
-    expect(arrayShift.insertShiftArray([4, 8, 15, 23, 42], 16)).toEqual([4, 8, 15, 16, 23,42]);
+    expect(arrayShift.insertShiftArray([4, 8, 15, 23, 42], 16)).toEqual([4, 8, 15, 16, 23, 42]);
   });
 
 

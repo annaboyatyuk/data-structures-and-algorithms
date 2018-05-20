@@ -21,5 +21,3 @@ exports.insertShiftArray = (arr, num) => {
   return newArr;
 };
 
-// insertShiftArray([1, 2, 3, 4], 5);
-// insertShiftArray([1, 2, 3, 4, 6, 7, 8, 9], 5);
