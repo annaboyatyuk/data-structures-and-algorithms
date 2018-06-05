@@ -8,7 +8,6 @@ Write the following methods for the Linked List class:
 - .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
 
 
-
 ## Challenge
 <!-- Description of the challenge -->
 You have access to the Node class and all the properties on the Linked List class.
