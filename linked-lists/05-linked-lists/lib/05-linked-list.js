@@ -8,121 +8,92 @@ class Node {
   }
 }
 
+
 class SinglyLinkedList {
 
-  constructor(value) {
-    this.head = null;
+  constructor() {
+    this.root = null;
   }
 
-  // append(value) {
 
+  append(value) {
 
-  // // Big O runtime:
-  // }
-
-
-
-}
-
-
-append(value) {
-
-  if(!this.root) {
-    this.root = new ListNode(value);
-  }
-  else {
-
-    let node = this.root;
-
-    while(node.next) {
-      node = node.next;
+    if(!this.root) {
+      this.root = new Node(value);
     }
+    else {
+      let node = this.root;
 
-
-    node.next = new ListNode(value);
-
+      while(node.next) {
+        node = node.next;
+      }
+      node.next = new Node(value);
+    }
+    // big o - O(n)
   }
-}
 
 
+  prepend(value) {
 
-prepend(value) {
-
-  const newNode = new ListNode(value);
+    const newNode = new Node(value);
   
-  if(!this.root) {
+    if(!this.root) {
 
-    this.root = newNode;
-  } else {
-    
-    newNode.next = this.root;
-    this.root = newNode;
-  };
-};
-
-
-insertBefore(value, newValue) {
-
-  let node = new ListNode(newValue);
-
-  let current = this.root;
-
-  while(current) {
-    
-  }
-
-}
-
-insertBefore(value, newValue) {
-
-  let node = new ListNode(newValue);
-
-  let current = this.root;
-
-  while(current) {
-
-    if(current.value === value) {
-      node.next = current.next;
-      current.next = node;
-      break;
-
+      this.root = newNode;
+    } 
+    else {
+      this.root = newNode;
+      this.root.next = this.root;
     }
-    current = current.next;
+    // big o - O(1)
   }
+
+  
+  reverse() {
+
+    if(this.head.next === null) {
+      return this;
+    }
+    else {
+      let cur = this.head;
+      let prev = null;
+      
+      while(cur.next) {
+        let initialNext = cur.next;
+        initialNext = prev;
+        prev = cur;
+        cur = initialNext;
+      }
+      this.head = cur;
+      this.head.next = prev;
+    }
+    // big o - O(n)
+  }
+
+
+
+
+
+
+
+
 }
 
 
+// serialize = () => {
 
-reverse(value) {
+//   let str ='';
 
-  while(cur.next) {
-    initialNext = cur.next;
-    cur.next = prev;
-    prev = cur;
+//   let root = this.root;
 
-  }
-};
+//   while(node) {
+//     str += '[' + node.value + '] ->';
+//     node = node.next;
+//   }
+//   str+= 'X';
 
-
-
-serialize() {
-
-  let str ='';
-
-  let nose = this.root;
-
-  while(node) {
-    str += '[' + node.value + '] ->';
-    node = node.next;
-  }
-  str+= 'X';
-
-  return str;
-}
-
-
-
-// kth from end
+//   return str;
+// };
 
 
 
@@ -130,36 +101,39 @@ serialize() {
 
 
 
-  // prepend(value) {
+
+
+
+// prepend(value) {
 
     
-  // // Big O runtime:
-  // }
+// // Big O runtime:
+// }
 
-  // reverse() {
-
-    
-  // // Big O runtime:
-  // }
-
-  // remove(offset) {
+// reverse() {
 
     
-  // // Big O runtime:
-  // }
+// // Big O runtime:
+// }
 
-
-  // serialize() {
-
-    
-  // // Big O runtime:
-  // }
-
-  // deserialize() {
+// remove(offset) {
 
     
-  // // Big O runtime:
-  // }
+// // Big O runtime:
+// }
+
+
+// serialize() {
+
+    
+// // Big O runtime:
+// }
+
+// deserialize() {
+
+    
+// // Big O runtime:
+// }
 
 // }
 
