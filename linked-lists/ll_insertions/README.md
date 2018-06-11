@@ -9,7 +9,6 @@ Write the following methods for the Linked List class:
 
 
 ## Challenge
-<!-- Description of the challenge -->
 You have access to the Node class and all the properties on the Linked List class.
 
 

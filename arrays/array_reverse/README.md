@@ -1,7 +1,7 @@
 # Reverse an Array
 <!-- Short summary or background information -->
 I don't know what this is asking
-![Getting Started](../assets/question.jpg)
+![Getting Started](../../assets/question.jpg)
 
 
 ## Challenge
