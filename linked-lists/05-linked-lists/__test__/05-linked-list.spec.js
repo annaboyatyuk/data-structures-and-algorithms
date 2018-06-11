@@ -1,12 +1,12 @@
-'use strict';
+// 'use strict';
 
-let SinglyLinkedList = require('../lib/05-linked-list');
+// let SinglyLinkedList = require('../lib/05-linked-list');
 
-describe('Singly Linked List', () => {
+// describe('Singly Linked List', () => {
 
-  it('', () => {
-    expect().toBe();
-  });
+//   it('', () => {
+//     expect().toBe();
+//   });
 
 
-});
+// });

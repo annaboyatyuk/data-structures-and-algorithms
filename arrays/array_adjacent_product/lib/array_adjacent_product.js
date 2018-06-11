@@ -1,79 +1,80 @@
 'use strict';
 
 
+module.exports = largestProduct;
 
-module.exports = exports = {};
-  
-//   let largestProduct = (a, b) => {
+function largestProduct(array) {
 
-//   // let product = 0;
-//   // product = a * b;
-//   return a*b;
-//   // return product;
-// };
+  let largestNum = getLargest(array);
+
+  return getProduct(array, largestNum);
+}
+
+function getLargest(array) {
+  let biggestNumber = 0;
+  for(let i = 0; i < array.length; i ++) {
+    for(let j = 0; j < array[i].length - 1; j++) {
+      let currentLargest = array[i][j] > array[i][j + 1] ? array[i][j] : array[i][j + 1];
+      biggestNumber = biggestNumber > currentLargest ? biggestNumber : currentLargest;
+    }
+  }
+  return biggestNumber;
+}
+
+function getProduct(array, num) {
+
+  let curBigProduct = 0;
+
+  for(let i = 0; i < array.length; i++) {
+    for(let j = 0; j < array[i].length; j++) {
+      if (array[i][j] === num) {
+        let compare = productToCompare(array,i,j);
+        curBigProduct = curBigProduct > compare ? curBigProduct : compare;
+      }
+    }
+  }
+  return curBigProduct;
+}
+
+function productToCompare(array,index1, index2) {
+  let largest = 0;
+  for(let i = index1 - 1; i < index1 + 2; i++) {
+    for (let j = index2 - 1; j < index2 + 2; j++) {
+      if(index1 === i && index2 === j ) {
+        //skip
+      } else if (i >= 0 && j >= 0 && j < array[index1].length && i < array.length) {
+        largest = largest > array[i][j]*array[index1][index2] ? largest : array[i][j]*array[index1][index2];
+      }
+    }
+  }
+  return largest;
+}
 
 
 
-  
+// module.exports = exports = {};
 
-// let arrayProduct = (array) => {
 
-//   let product = [0, 0];
+// exports.arrayProduct = (array) => {
+
+//   let product = 0;
 //   // console.log(array);
 
 //   for(let i = 0; i < array.length; i++) {
 //     console.log(array[i]);
 
-//     // let currentGreatest = [0]
+//     let currentGreatest = [i];
 
 //     for(let j = 0; j < array[i].length -1; j++) {
-//       if(array[i][j] > product[i]) {
+//       if(array[i][j] > currentGreatest[i]) {
+//         currentGreatest[i] = array[i][j] * array[i][j+1];
 //         console.log(array[i][j]);
-//         product[i] = array[i][j] * array[i][j+1];
+//         console.log(currentGreatest);
 //       }
+//       product = currentGreatest;
 //     }
     
 //   }
 
 //   return product;
-// }
-
-
-
-
-exports.arrayProduct = (array) => {
-
-  let product = 0;
-  // console.log(array);
-
-  for(let i = 0; i < array.length; i++) {
-    console.log(array[i]);
-
-    let currentGreatest = [i];
-
-    for(let j = 0; j < array[i].length -1; j++) {
-      if(array[i][j] > currentGreatest[i]) {
-        currentGreatest[i] = array[i][j] * array[i][j+1];
-        console.log(array[i][j]);
-        console.log(currentGreatest);
-      }
-      product = currentGreatest;
-    }
-    
-  }
-
-  return product;
-};
-
-
-// largestProduct(2, 3);
-arrayProduct([[3, 4], [2, 3]]);
-
-
-// largestProduct([ 
-//   [ 1, 2, 1 ], 
-//   [ 2, 4, 2 ], 
-//   [ 3, 6, 8 ], 
-//   [ 7, 8, 1 ] 
-// ]);
-
+// };
