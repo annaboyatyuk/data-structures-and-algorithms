@@ -10,7 +10,6 @@ class Node {
 
 
 class SinglyLinkedList {
-
   constructor() {
     this.root = null;
   }
@@ -51,91 +50,74 @@ class SinglyLinkedList {
   
   reverse() {
 
-    if(this.head.next === null) {
+    if(this.root.next === null) {
       return this;
     }
     else {
-      let cur = this.head;
+      let curr = this.root;
       let prev = null;
       
-      while(cur.next) {
-        let initialNext = cur.next;
-        initialNext = prev;
-        prev = cur;
-        cur = initialNext;
+      while(curr.next) {
+        let initialNext = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = initialNext;
       }
-      this.head = cur;
-      this.head.next = prev;
+      this.root = curr;
+      this.root.next = prev;
     }
     // big o - O(n)
   }
 
 
+  remove(offset) {
+    let curr = this.root;
+    let count = 1;
+
+    if(offset ===1) {
+      this.root = null;
+    }
+    while(curr.next) {
+      count++;
+      if(count === offset) {
+        curr.next = curr.next.next;
+      }
+      else if(curr.next.next === null) {
+        curr.next = null;
+      }
+      else {
+        curr = curr.next;
+      }
+    }
+    // big o - O(n)
+  }
 
 
+  serialize() {
+
+    let str ='';
+    let node = this.root;
+
+    if(!node) {
+      return 'x';
+    }
+
+    while(node.next) {
+      str += `${node.value} `;
+      node = node.next;
+    }
+    str += `${node.value}`;
+
+    return str;
+
+    // big 0 O(n)
+  }
 
 
 
 
 }
 
-
-// serialize = () => {
-
-//   let str ='';
-
-//   let root = this.root;
-
-//   while(node) {
-//     str += '[' + node.value + '] ->';
-//     node = node.next;
-//   }
-//   str+= 'X';
-
-//   return str;
-// };
-
-
-
-
-
-
-
-
-
-
-// prepend(value) {
-
-    
-// // Big O runtime:
-// }
-
-// reverse() {
-
-    
-// // Big O runtime:
-// }
-
-// remove(offset) {
-
-    
-// // Big O runtime:
-// }
-
-
-// serialize() {
-
-    
-// // Big O runtime:
-// }
-
-// deserialize() {
-
-    
-// // Big O runtime:
-// }
-
-// }
 
 
 module.exports = SinglyLinkedList;
