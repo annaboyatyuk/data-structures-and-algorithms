@@ -31,27 +31,6 @@ class SinglyLinkedList {
   }
 
 
-  // insertBefore(value, newValue) {
-
-  //   let node = new Node(newValue);
-
-  //   let current = this.root;
-
-  //   while(current) {
-
-  //     if(current.value === value) {
-  //       node.next = current.next;
-  //       current.next = node;
-  //       break;
-
-  //     }
-  //     current = current.next;
-  //   }
-  // }
-
-
-
-
   insertBefore(val, newVal) {
     if (val === this.root.value) {
       let oldroot = this.root;
