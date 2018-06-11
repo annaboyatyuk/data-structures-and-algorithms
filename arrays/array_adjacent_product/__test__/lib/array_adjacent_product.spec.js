@@ -1,40 +1,31 @@
 'use strict';
 
 
-const largestProduct = require('../../lib/array_adjacent_product');
+const arrayProduct = require('../../lib/array_adjacent_product');
 
-describe('largestProduct module', () => {
+describe('arrayProduct module', () => {
   it('should find the largest product of a 2D array', () => {
-    let newArray = [
-      [5, 5, 5],
-      [5, 9, 5],
-      [6, 5, 5],
+    let newArray = [ 
+      [ 1, 2, 1 ], 
+      [ 2, 4, 2 ], 
+      [ 3, 6, 8 ], 
+      [ 7, 8, 1 ],
     ];
 
-    expect(largestProduct(newArray)).toEqual(54);
+    expect(arrayProduct(newArray)).toEqual(64);
   });
 
-  it('should find the largest product of a 2D array when the array contains multiple of the same largest value', () => {
+
+  it('should find the largest product of a 2D array when the largest value is in the middle', () => {
     let newArray = [
-      [100, 100, 1, 1, 1, 1],
-      [1, 10, 1, 1, 1, 1],
-      [1, 1, 1, 1, 75, 80],
-      [1, 1, 1, 1, 50, 100],
-      [1, 1, 1, 1, 5, 5],
+      [1, 2, 3, 4, 5],
+      [4, 3, 2, 1, 0],
+      [1, 2, 9, 1, 1],
+      [1, 0, 7, 1, 1],
+      [2, 2, 2, 2, 2],
     ];
 
-    expect(largestProduct(newArray)).toEqual(10000);
-  });
-
-  it('should find the largest product of a 2D array when the largest value is in the center', () => {
-    let newArray = [
-      [100, 100, 1, 1, 1, 1],
-      [1, 10, 1, 1, 1, 1],
-      [1, 1, 1, 1000, 75, 80],
-      [1, 1, 1, 1, 50, 100],
-      [1, 1, 1, 1, 5, 5],
-    ];
-
-    expect(largestProduct(newArray)).toEqual(75000);
+    expect(arrayProduct(newArray)).toEqual(63);
   });
 });
+
