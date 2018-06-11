@@ -1,59 +1,67 @@
+'use strict';
 
 
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
 
 
-// linked lists
+class SinglyLinkedList {
+  constructor() {
+    this.root = null;
+  }
 
 
-// for the lab
+  append(value) {
+
+    if(!this.root) {
+      this.root = new Node(value);
+    }
+    else {
+      let node = this.root;
+
+      while(node.next) {
+        node = node.next;
+      }
+      node.next = new Node(value);
+    }
+  }
 
 
-// append(value) {
+  insertBefore(val, newVal) {
+    if (val === this.root.value) {
+      let oldroot = this.root;
+      this.root = new Node(newVal);
+      this.root.next = oldroot;
+    } else {
+      let current = this.root;
 
-//   if(!this.root) {
-//     this.root = new ListNode(value);
-//   }
-//   else {
+      while (current.next.value !== val) {
+        current = current.next;
+      }
 
-//     let node = this.root;
+      let oldNext = current.next;
+      current.next = new Node(newVal);
 
-//     while(node.next) {
-//       node = node.next;
-//     }
+      current.next.next = oldNext;
+    }
+  }
 
-
-//     node.next = new ListNode(value);
-
-//   }
-// }
-
-
-
-// prepend(value) {
-
-//   const newNode = new ListNode(value);
-  
-//   if(!this.root) {
-
-//     this.root = newNode;
-//   } else {
-    
-//     newNode.next = this.root;
-//     this.root = newNode;
-//   };
-// };
+  insertAfter(val, newVal) {
+    let current = this.root;
+    while(current.value !== val) {
+      current = current.next;
+    }
+    let oldNext = current.next; 
+    current.next = new Node(newVal);
+    current.next.next = oldNext;
+  }
 
 
-// insertBefore(value, newValue) {
-
-//   let node = new ListNode(newValue);
-
-//   let current = this.root;
-
-//   while(current) {
-    
-//   }
-
-// }
+}
 
 
+module.exports = SinglyLinkedList;
