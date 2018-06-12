@@ -31,11 +31,28 @@ class SinglyLinkedList {
   }
 
 
-  static hasLoop() {
+  hasLoop() {
 
-    
+    if(!this.root.next) {
+      return false;
+    }
 
+    let current = this.root;
+    let fast = current.next;
+
+    while(fast !== current) {
+
+      current = current.next;
+
+      if(!current.next) {
+        return false;
+      }
+      
+      fast = fast.next.next;
+    }
+    return true;
   }
+
 
 }
 

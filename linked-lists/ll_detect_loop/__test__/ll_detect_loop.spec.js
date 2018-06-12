@@ -11,14 +11,30 @@ describe('detect loop should return a boolean for if the linked list loops or no
   });
 
 
-  it('should return list 1 merged', () => {
-    let listone = new LinkedList();
-    let listtwo = new LinkedList();
-    listone.append(1);
-    listone.append(3);
+  it('hasloop should detect a normal list', () => {
 
-    listtwo.append(2);
-    listtwo.append(4);
+    let newList = new LinkedList;
+    newList.append(1);
+    newList.append(2);
+    newList.append(3);
+
+    expect(newList.hasLoop()).toBe(false);
+
+  });
+
+  it('hasloop should detect a looped list', () => {
+
+    let newList = new LinkedList;
+    newList.append(1);
+    newList.append(2);
+    newList.append(3);
+    newList.append(4);
+
+    let firstNode = newList.root.next.next;
+    newList.root.next.next.next.next = firstNode;
+
+    expect(newList.hasLoop()).toBe(true);
+
   });
 
 
