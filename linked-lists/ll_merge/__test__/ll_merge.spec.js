@@ -11,7 +11,7 @@ describe('Merge two linked lists and alternate the values', () => {
     expect(newList.root).toBeNull();
   });
 
-  it('should show 2 lists', () => {
+  it('should return list 1 merged', () => {
     let listone = new MergeLists();
     let listtwo = new MergeLists();
     listone.append(1);
@@ -26,7 +26,7 @@ describe('Merge two linked lists and alternate the values', () => {
   });
 
 
-  it('should show 2 lists', () => {
+  it('should return list 1 if the first list is longer', () => {
     let listone = new MergeLists();
     let listtwo = new MergeLists();
     listone.append(1);
@@ -43,7 +43,7 @@ describe('Merge two linked lists and alternate the values', () => {
   });
 
 
-  it('should show 2 lists', () => {
+  it('should return list 1 if the second list is longer', () => {
     let listone = new MergeLists();
     let listtwo = new MergeLists();
     listone.append(1);
