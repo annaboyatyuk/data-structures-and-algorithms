@@ -1,28 +1,63 @@
 'use strict';
 
-const LinkedList = require('../../05-linked-lists/lib/05-linked-list');
-// const MergeLists = require('../ll_merge');
+
+const MergeLists = require('../ll_merge');
 
 describe('Merge two linked lists and alternate the values', () => {
 
   it('should return null if empty', () => {
-    let newList = new LinkedList();
+    let newList = new MergeLists();
 
     expect(newList.root).toBeNull();
   });
 
   it('should show 2 lists', () => {
-    let listone = new LinkedList();
-    let listtwo = new LinkedList();
-    // let merge = new MergeLists();
+    let listone = new MergeLists();
+    let listtwo = new MergeLists();
     listone.append(1);
-    listtwo.append(2);
     listone.append(3);
-    listtwo.append(4);
-    console.log(listone);
-    console.log(listtwo);
-    // console.log(merge(listone, listtwo));
 
+    listtwo.append(2);
+    listtwo.append(4);
+    let merged = MergeLists.mergeLists(listone, listtwo);
+    expect(merged.root.value).toBe(1);
+    expect(merged.root.next.value).toBe(2);
+    expect(merged.root.next.next.next.next).toBeNull();
   });
+
+
+  it('should show 2 lists', () => {
+    let listone = new MergeLists();
+    let listtwo = new MergeLists();
+    listone.append(1);
+    listone.append(3);
+    listone.append(6);
+    listone.append(8);
+
+    listtwo.append(2);
+    listtwo.append(4);
+    let merged = MergeLists.mergeLists(listone, listtwo);
+    expect(merged.root.value).toBe(1);
+    expect(merged.root.next.value).toBe(2);
+    expect(merged.root.next.next.next.next.next).toBeNull();
+  });
+
+
+  it('should show 2 lists', () => {
+    let listone = new MergeLists();
+    let listtwo = new MergeLists();
+    listone.append(1);
+    listone.append(3);
+
+    listtwo.append(2);
+    listtwo.append(4);
+    listtwo.append(9);
+    listtwo.append(4);
+    let merged = MergeLists.mergeLists(listone, listtwo);
+    expect(merged.root.value).toBe(1);
+    expect(merged.root.next.value).toBe(2);
+    expect(merged.root.next.next.next.next.next.next).toBeNull();
+  });
+
 
 });
