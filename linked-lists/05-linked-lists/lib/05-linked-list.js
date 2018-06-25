@@ -113,6 +113,42 @@ class SinglyLinkedList {
     // big 0 O(n)
   }
 
+  deserialize(str) {
+    let newList = new SinglyLinkedList;
+
+    if(str === 'x') {
+      return newList;
+    }
+    else {
+      let nodeList = str.split(/\[/).map(node => node.split(/\]/)[0]);
+
+      for(let i = 1; i < nodeList.length -1; i++) {
+        nodeList[i] = isNaN(parseInt(nodeList[i])) ? nodeList[i] : parseInt(nodeList[i]);
+        newList.append(nodeList[i]);
+      }
+      return newList;
+    }
+    // big o - O(n)
+  }
+
+
+  // deserialize(str) {
+  //   let newList = new SinglyLinkedList;
+
+  //   if(str === 'x') {
+  //     return newList;
+  //   }
+  //   else {
+  //     let nodeList = str;
+
+  //     for(let i = 1; i < nodeList.length -1; i++) {
+  //       nodeList[i] = isNaN(parseInt(nodeList[i])) ? nodeList[i] : parseInt(nodeList[i]);
+  //       newList.append(nodeList[i]);
+  //     }
+  //     return newList;
+  //   }
+  //   // big o - O(n)
+  // }
 
 
 
