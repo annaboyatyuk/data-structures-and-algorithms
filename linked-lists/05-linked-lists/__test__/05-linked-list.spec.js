@@ -129,5 +129,21 @@ describe('Lab 05 Singly Linked List Module', ()=> {
     expect(newList.serialize()).toBe('1 2');
   });
 
+
+  it('deserialize should take a string and create a new linked list', () => {
+    let newList = new SinglyLinkedList;
+ 
+    let actual = newList.deserialize('[1] -> [2] -> [3] -> [x]');
+    expect(actual.root.next.next.value).toBe(3);
+  });
+
+
+  it('deserialize should work for non numbers', () => {
+    let newList = new SinglyLinkedList;
+    let actual = newList.deserialize('[linked] -> [lists] -> [hello] -> [x]');
+
+    expect(actual.root.next.next.value).toBe('hello');
+  });
+
   
 });
