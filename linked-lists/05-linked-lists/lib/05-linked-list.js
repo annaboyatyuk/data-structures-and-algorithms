@@ -132,26 +132,6 @@ class SinglyLinkedList {
   }
 
 
-  // deserialize(str) {
-  //   let newList = new SinglyLinkedList;
-
-  //   if(str === 'x') {
-  //     return newList;
-  //   }
-  //   else {
-  //     let nodeList = str;
-
-  //     for(let i = 1; i < nodeList.length -1; i++) {
-  //       nodeList[i] = isNaN(parseInt(nodeList[i])) ? nodeList[i] : parseInt(nodeList[i]);
-  //       newList.append(nodeList[i]);
-  //     }
-  //     return newList;
-  //   }
-  //   // big o - O(n)
-  // }
-
-
-
 }
 
 

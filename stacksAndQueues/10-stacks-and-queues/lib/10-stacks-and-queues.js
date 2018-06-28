@@ -37,6 +37,34 @@ class Stack{
     return top;
   }
 
+  serialize() {
+    let str = '';
+    if(!this.top) {
+      return str;
+    }
+    while(this.top.next) {
+      str += `${this.top.value} `;
+      this.top = this.top.next;
+    }
+    str += `${this.top.value}`;
+
+    return str;
+  }
+
+  static deserialize(str) {
+    let newStack = new Stack();
+
+    if(str === '') {
+      return newStack;
+    }
+    let newArray = str.split(' ');
+
+    for(let i = newArray.length -1; i >= 0 ; i--) {
+      newStack.push(newArray[i]);
+    }
+    return newStack;
+  }
+
 }
 
 
@@ -71,6 +99,37 @@ class Queue{
     let first = this.first.value;
     this.first = this.first.next;
     return first;
+  }
+
+  serialize() {
+    let str = '';
+    if(!this.first) {
+      return str;
+    }
+    while(this.first.next) {
+      str += `${this.first.value} `;
+      this.first = this.first.next;
+    }
+    str += `${this.first.value}`;
+
+    return str;
+  }
+
+  static deserialize(str) {
+    let newQueue = new Queue();
+
+    if(str === '') {
+      return newQueue;
+    }
+    let newArray = str.split(' ');
+    console.log(newArray);
+    
+    
+    for(let i = 0; i < newArray.length; i++) {
+      newQueue.enqueue(newArray[i]);
+      console.log(newQueue);
+    }
+    return newQueue;
   }
 
 

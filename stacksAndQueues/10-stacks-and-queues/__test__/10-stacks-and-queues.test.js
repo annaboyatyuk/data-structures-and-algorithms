@@ -43,7 +43,49 @@ describe('stacks', () => {
     expect(removed).toBe(3);
   });
 
+  it('serialize return an empty string if no nodes exist', () => {
+    let stack = new Stack();
+    let actual = stack.serialize();
+    expect(actual).toBe('');
+  });
+
+  it('serialize should return a string of one node', () => {
+    let stack = new Stack();
+    stack.push(1);
+    let actual = stack.serialize();
+    expect(actual).toBe('1');
+  });
+
+  it('serialize should return a string of multiple nodes', () => {
+    let stack = new Stack();
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+    let actual = stack.serialize();
+    expect(actual).toBe('3 2 1');
+  });
+
+  it('deserialize should take in an empty string and return null', () => {
+    // let stack = new Stack();
+    let actual = Stack.deserialize('');
+    expect(actual.top).toBeNull();
+  });
+
+  it('deserialize should take a string and return nodes', () => {
+    let actual = Stack.deserialize('1 2 3');
+    expect(actual.top.value).toBe('1');
+  });
+
+  it('deserialize should take in a string of words and return nodes', () => {
+    let actual = Stack.deserialize('Hello there');
+    expect(actual.top.value).toBe('Hello');
+  });
+
 });
+
+
+
+
 
 describe('queue', () => {
 
@@ -77,6 +119,43 @@ describe('queue', () => {
     let removed = queue.dequeue();
     expect(removed).toBe(1);
     expect(queue.first.value).toBe(2);
+  });
+
+  it('serialize return an empty string if no nodes exist', () => {
+    let queue = new Queue();
+    let actual = queue.serialize();
+    expect(actual).toBe('');
+  });
+
+  it('serialize should return a string of one node', () => {
+    let queue = new Queue();
+    queue.enqueue(1);
+    let actual = queue.serialize();
+    expect(actual).toBe('1');
+  });
+
+  it('serialize should return a string of multiple nodes', () => {
+    let queue = new Queue();
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+    let actual = queue.serialize();
+    expect(actual).toBe('1 2 3');
+  });
+
+  it('deserialize should take in an empty string and return null', () => {
+    let actual = Queue.deserialize('');
+    expect(actual.first).toBeNull();
+  });
+
+  it('deserialize should take a string and return nodes', () => {
+    let actual = Queue.deserialize('1 2 3');
+    expect(actual.first.value).toBe('1');
+  });
+
+  it('deserialize should take in a string of words and return nodes', () => {
+    let actual = Queue.deserialize('Hello there');
+    expect(actual.first.value).toBe('Hello');
   });
 
 
