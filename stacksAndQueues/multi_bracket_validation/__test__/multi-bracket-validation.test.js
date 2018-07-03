@@ -18,7 +18,6 @@ describe('multi bracket validation', () => {
 });
 
 
-
 describe('stack', () => {
   it('peek should look at the top value of the stack', () => {
     let stack = new Stack();
