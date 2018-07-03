@@ -7,8 +7,8 @@ const Stack = require('../lib/multi-bracket-validation').Stack;
 describe('multi bracket validation', () => {
 
   it('should check if brackets are balanced', () => {
-    expect(validate('{}')).toBe(true);
-    // expect(validate('{}[')).toBe(false);
+    // expect(validate('{}')).toBe(true);
+    expect(validate('{}[')).toBe(false);
     // expect(validate('{}(){}')).toBe(true);
     // expect(validate('()[[Extra Characters]]')).toBe(true);
     // expect(validate('(){}[[]]')).toBe(true);

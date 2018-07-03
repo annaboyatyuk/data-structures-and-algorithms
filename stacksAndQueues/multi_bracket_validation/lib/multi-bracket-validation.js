@@ -66,15 +66,20 @@ let multiBracketValidation = (input) => {
   for(let char of input) {
     if(openers.includes(char)) {
       stack.push(char);
+      console.log(stack);
+      
     }
     else if(Object.keys(closers).includes(char)) {
       if(stack.length === 0) {
+        console.log(stack);
         return false;
       }
       else if(stack.peek() !== closers[char]) {
+        console.log(stack);
         return false;
       }
       else {
+        console.log(stack);
         stack.pop();
       }
     }
