@@ -2,10 +2,10 @@
 
 
 # Multi-bracket Validation.
-<!-- Short summary or background information -->
+write a function that takes a string as an argument and returns a boolean. true if the brackets in the string are balanced and false if not
 
 ## Challenge
-<!-- Description of the challenge -->
+
 
 ## Solution
 ​![Getting Started](../../assets/multi-bracket-validation.jpg)
