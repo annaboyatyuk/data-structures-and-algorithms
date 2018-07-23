@@ -34,10 +34,90 @@ class Tree {
     this.root = null;
   }
 
-insert(node) {
-  
-}
+  // findMin() {
+  //   let current = this.root;
+  //   while(current.left !== null) {
+  //     current = current.left;
+  //   }
+  //   return current.value;
+  // }
 
+  // findMax() {
+  //   let current = this.root;
+  //   while(current.right !== null) {
+  //     current = current.right;
+  //   }
+  //   return current.value;
+  // }
+
+  insert(node) {
+    if(this.root) {
+      this.root.add(node);
+    }
+    else {
+      this.root = new Node(node);
+    }
+  }
+
+  remove(value) {
+    let removeNode = (node, value) => {
+      if(node === null) {
+        return null;
+      }
+      if(value === node.value) {
+        if(node.left === null && node.right === null) {
+          return null;
+        }
+        if(node.left === null) {
+          return node.right;
+        }
+        if(node.right === null) {
+          return node.left;
+        }
+        var tempNode = node.right;
+        while(tempNode.left !== null) {
+          tempNode = tempNode.left;
+        }
+        node.value = tempNode.value;
+        node.right = removeNode(node.right, tempNode.value);
+        return node;
+      }
+      else if(value < node.value) {
+        node.left = removeNode(node.left, value);
+        return node;
+      }
+      else {
+        node.right = removeNode(node.right, value);
+        return node;
+      }
+    };
+    this.root = removeNode(this.root, value);
+  }
+
+  find(node) {
+    let current = this.root;
+    while(current.value !== node) {
+      if(node < current.value) {
+        current = current.left;
+      }
+      else {
+        current = current.right;
+      }
+      if(current === null) {
+        return null;
+      }
+    }
+    return current;
+  }
+
+
+  serialize() {
+
+  }
+
+  // deserialize() {
+
+  // }
 
 
 }
@@ -45,118 +125,5 @@ insert(node) {
 
 module.exports = Tree;
 
-
-
-  
-  
-// class Node{
-//   constructor(val) {
-//     this.val = val;
-//     this.left = null;
-//     this.right = null;
-//   }
-
-// add(value) {
-//   if(value < this.value) {
-//     if(this.left) {
-//       this.left.add(value);
-//     }
-//     else {
-//       this.left = new Node(value);
-//     }
-//   } 
-//   else if(value > this.value) {
-//     if(this.right) {
-//       this.right.add(value);
-//     }
-//     else{
-//       this.right = new Node(value);
-//     }
-//   }
-// }
-
-// <!-- insert(val) {
-//   if(this.root) {
-//     this.root.add(value);
-//   }
-//   else {
-//     this.root = new Node(val);
-//   }
-// } -->
-
-
-// find(value) {
-//   if(value ===  this.value) {
-//     return this;
-//   }
-//   else if(value < this.value) {
-//     return this.left ? this.left.find(value) : null;
-//   }
-//   else {
-//     return this.right ? this.right.find(value) : null
-//   }
-// }
-
-
-
-// }
-
-
-
-// class BinarySearchTree{
-//   constructor() {
-//     this.root = null;
-//   }
-
-
-// insert(value) {
-//   let node = new Node(value)
-
-//   if(!this.root) {
-//     this.root = new Node(value);
-//     return;
-//   }
-
-//   if(value < this.root.value) {
-//     this.root.left = node;
-//   }
-
-//   else if(value > this.root.value) {
-//     this.root.right = node;
-
-//   }
-
-
-// }
-
-
-// find(value) {
-// return this.root ? this.root.find(value) : 
-// }
-
-
-// find(value) {
-
-//   if(this.root.value === value) {
-//     return this.root;
-//   }
-//   else if(this.left.value === value) {
-//     return this.left;
-//   }
-
-
-// } 
-
-
-
-
-// }
-
-
-
-
-
-// recursion: am i seeing the same operation again and again and again
-// repeating a process and building on the result
 
 
