@@ -1,8 +1,7 @@
 # FizzBuzz Tree
-<!-- Short summary or background information -->
 
 ## Challenge
-<!-- Description of the challenge -->
+write a function called fizzBuzzTree to traverse the tree and determinen if a value is divisible by 3, 5 or both. 
 
 ## Solution
-![Getting Started](../../assetsfizzbuzztree.jpg)
+![Getting Started](../../assets/fizzbuzztree.jpg)
