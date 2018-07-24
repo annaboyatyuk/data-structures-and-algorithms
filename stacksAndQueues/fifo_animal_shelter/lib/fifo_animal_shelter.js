@@ -37,7 +37,7 @@ class Queue{
       return first;
     }
     if(pref === 'cat') {
-      let 
+      // let 
     }
     // if(this.first === pref) {
     let first = this.first.value;
