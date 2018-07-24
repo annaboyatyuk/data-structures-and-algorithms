@@ -111,9 +111,23 @@ class Tree {
   }
 
 
-  serialize() {
-
+  serialize(root) {
+    var result = [];
+    this.serializer(root, result);
+    return result.join(',');
   }
+   
+  serializer(node, serialized) {
+    if(!node){
+      serialized.push('#');
+      return;
+    }
+    serialized.push(node.val);
+    this.serializer(node.left, serialized);
+    this.serializer(node.right, serialized);
+  }
+
+
 
   // deserialize() {
 

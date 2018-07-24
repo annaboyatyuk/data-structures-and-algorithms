@@ -29,9 +29,9 @@ describe('tree', () => {
     tree.insert(8);
     tree.insert(4);
     tree.insert(12);
-    console.log(tree);
+    // console.log(tree);
     tree.remove(4);
-    console.log(tree);
+    // console.log(tree);
     expect(tree.find(4)).toBe(null);
   });
 
@@ -42,9 +42,9 @@ describe('tree', () => {
     tree.insert(12);
     tree.insert(1);
     tree.insert(3);
-    console.log(tree);
+    // console.log(tree);
     tree.remove(4);
-    console.log(tree);
+    // console.log(tree);
     expect(tree.find(4)).toBe(null);
   });
 
@@ -57,6 +57,16 @@ describe('tree', () => {
     expect(found.value).toBe(4);
   });
   
+
+  // it('serialize', () => {
+  //   let tree = new Tree();
+  //   tree.insert(8);
+  //   tree.insert(4);
+  //   tree.insert(12);
+  //   console.log(tree.serialize(tree));
+  //   let found = tree.serialize(tree);
+  //   expect(found.value).toBe(4);
+  // });
 
 
 });
